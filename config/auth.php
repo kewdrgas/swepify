@@ -36,10 +36,19 @@ return [
     */
 
     'guards' => [
+        'business' => [
+            'driver' => 'session',
+            'provider' => 'business',
+        ],
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
+         'user' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
     ],
 
     /*
@@ -65,10 +74,10 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+         'business' => [
+             'driver' => 'eloquent',
+             'model' => App\Models\Business::class,
+        ],
     ],
 
     /*
