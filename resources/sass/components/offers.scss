@@ -1,0 +1,101 @@
+.offers_heading {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: 60px;
+}
+
+.offer_wrapper {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 15px 25px;
+    border: #009ce6 3px solid;
+    margin-bottom: 40px;
+}
+.offer_location_content {
+    font-size: 19px;
+    margin: 0px;
+    letter-spacing: 0.05em;
+    margin-left: 24px;
+    text-transform: uppercase;
+}
+.offer_title {
+    font-weight: bold;
+    font-size: 32px;
+    margin: 0px;
+    color: #009ce6;
+    margin-bottom: 6px;
+}
+.offer_elements {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    margin-top: 9px;
+    margin-left: -97px;
+    font-weight: bold;
+}
+.offer_public_date_content {
+    font-size: 14px;
+    margin: 0px;
+}
+.offer_section {
+    margin: 0px;
+}
+.offer {
+    &_location_content {
+        position: relative;
+        &::before {
+            width: 22px;
+            height: 22px;
+            background-size: cover;
+            position: absolute;
+            content: "";
+            left: -25px;
+            display: block;
+            top: 4px;
+        }
+    }
+
+    &_element_content {
+        position: relative;
+        &::before {
+            width: 19px;
+            height: 19px;
+            background-size: cover;
+            position: absolute;
+            content: "";
+            left: -25px;
+            display: block;
+            top: 1px;
+        }
+    }
+}
+.location::before {
+    background-image: url(../../../public/images/placeholder.png);
+}
+
+.calendar::before {
+    background-image: url(../../../public/images/calendar.png);
+}
+.clock::before {
+    background-image: url(../../../public/images/clock.png);
+}
+.money::before {
+    background-image: url(../../../public/images/dollar.png);
+}
+.offer_public_date_border {
+    border-top: #c9c9c9 1px solid;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.offer_section_photo {
+    width: 130px;
+}
+.offer__content {
+    margin-left: 20px;
+}

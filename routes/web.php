@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\OffersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,7 @@ Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name(
 Route::get('registration', [CustomAuthController::class, 'registration'])->name('signup');
 Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom'); 
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
+Route::get('/oferty', [OffersController::class,'index'])->name('offers');
 Route::group(['middleware' => ['app.check']], function () {
 
 
@@ -32,7 +34,7 @@ Route::group(['middleware' => ['app.check']], function () {
   Route::get('/business/payment', 'CompanyController@payment')->name('company.payment');
   Route::get('/business/activate/{hash}', 'Auth\SignupCompanyController@activate')->name('business.activate');
   Route::get('/activate/{hash}', 'Auth\SignupController@activate')->name('activate');
-  Route::get('/oferty', 'OfferController@index')->name('offers');
+  
     Route::get('/lokalizacje', 'LocationController@index')->name('locations');
   Route::get('/oferty/{offerUuid}', 'OfferController@show')->name('offer.show');
 });

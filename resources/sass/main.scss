@@ -1,5 +1,11 @@
+p {
+    margin: 0px;
+}
 .navbar {
-    padding: 20px 0px;
+    padding: 5px 0px;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgb(120 124 139 / 4%);
+
     a {
         font-size: 16px;
         color: black;
@@ -17,6 +23,9 @@
         }
     }
 }
+.dashboard {
+    background-color: #f4f5f9;
+}
 a {
     text-decoration: none;
 }
@@ -25,8 +34,8 @@ a.button {
     &__whiteorange {
         line-height: 1.1875;
         background: #fff;
-        border: 1px solid #ff7043 !important;
-        color: #ff7043;
+        border: 1px solid #009ce6 !important;
+        color: #009ce6;
         padding: 15px 30px;
         border-radius: 3px;
         transition: background 0.5s linear;
@@ -39,17 +48,20 @@ a.button {
 
         background: linear-gradient(
             -90deg,
-            #ff7043,
-            #ff784d,
-            #ff7f57,
-            #ff8760,
-            #ff8e6a
+            #009ce6,
+            #09a2e9,
+            #16acf1,
+            #34b8f5,
+            #62c6f5
         );
-        border: 1px solid #ff7043 !important;
+        border: 1px solid #009ce6 !important;
         padding: 15px 30px;
         border-radius: 3px;
         transition: background 0.5s linear;
         position: relative;
         z-index: 1;
     }
+}
+.logo {
+    width: 120px;
 }

@@ -1,6 +1,6 @@
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container row-fluid">
-            <a class="navbar-brand" href="{{route('home')}}">Logo</a>
+            <a class="navbar-brand" href="{{route('home')}}"><img class="logo" src="{{ URL::asset('images/logo-swepify.svg'); }}"></a>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -16,7 +16,7 @@
             <div class="collapse navbar-collapse justify-content-between">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{route('home')}}">Swepify </a>
+                       
                     </li>
                 </ul>
 
