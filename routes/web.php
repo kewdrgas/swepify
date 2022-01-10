@@ -26,7 +26,7 @@ Route::post('custom-registration', [CustomAuthController::class, 'customRegistra
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 
 Route::get('/oferty', [OffersController::class,'index'])->name('offers');
-
+  Route::get('/oferta', [OffersController::class,'show'])->name('offer.show');
 
 Auth::routes();
 
@@ -55,7 +55,7 @@ Route::group(['middleware' => ['app.check']], function () {
   Route::get('/activate/{hash}', 'Auth\SignupController@activate')->name('activate');
   
     Route::get('/lokalizacje', 'LocationController@index')->name('locations');
-  Route::get('/oferty/{offerUuid}', 'OfferController@show')->name('offer.show');
+
 });
 Auth::routes();
 

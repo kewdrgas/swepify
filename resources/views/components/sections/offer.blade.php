@@ -21,7 +21,7 @@
     </div>
 
     <div class="offer_section">
-        <a href="{{route('offers')}}" class="button button__orange hero_button">Zobacz więcej</a>
+        <a href="{{route('offer.show')}}" class="button button__orange hero_button">Zobacz więcej</a>
 
     </div>
     </div>
