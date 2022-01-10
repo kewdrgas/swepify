@@ -116,20 +116,32 @@ a {
         padding: 30px;
     }
     &__heading {
-        font-size: 32px;
+        font-size: 34px;
         text-align: center;
         color: #009ce6;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
+        font-weight: bold;
     }
     &__text {
         color: black;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
+        text-align: center;
+        font-size: 18px;
     }
     &__button {
         font-size: 15px;
         padding: 15px 45px;
     }
     &:before {
+    }
+
+    &__photo {
+        width: 160px;
+    }
+    &__photos {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
     }
 }
 .darker {
