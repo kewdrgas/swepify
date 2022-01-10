@@ -21,11 +21,9 @@
             }
         </style>
     </head>
-    <body class="antialiased">
-        <div id="app">
-            @include('components.sections.header')
-            @yield('content')
-        </div>
+    <body id="app" class="antialiased">
+        @include('dashboard.business.header')
+        @yield('content')
     </body>
     <script src="{{ mix('/js/app.js') }}"></script>
 </html>

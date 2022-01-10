@@ -23,10 +23,9 @@
                 <div class="menu--buttons d-flex">
                     <a href="{{route('offers')}}" class="nav-link">Przeglądaj oferty</a>
                     <a href="{{route('locations')}}" class="nav-link">Lokalizacje</a>
-                    <a href="{{route('login')}}" class="button button__whiteorange"
-                        >Zaloguj się</a
-                    >
-                    <a href="{{route('signup')}}" class="button button__orange">Zarejestruj się</a>
+                    <header-button-component classButton="button__whiteorange" text="Zaloguj się" url="{{route('login')}}"></header-button-component>
+                    <header-button-component classButton="button__orange mg" text="Zarejestruj się" url="{{route('signup')}}"></header-button-component>
+
                 </div>
             </div>
         </div>

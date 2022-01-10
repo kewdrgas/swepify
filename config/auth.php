@@ -36,14 +36,15 @@ return [
     */
 
     'guards' => [
-        'business' => [
-            'driver' => 'session',
-            'provider' => 'business',
-        ],
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'business' => [
+            'driver' => 'session',
+            'provider' => 'businesses',
+        ],
+
          'user' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -73,8 +74,9 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+        
 
-         'business' => [
+         'businesses' => [
              'driver' => 'eloquent',
              'model' => App\Models\Business::class,
         ],
