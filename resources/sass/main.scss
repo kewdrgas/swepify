@@ -146,3 +146,33 @@ a {
         background-color: rgba(0, 0, 0, 0.3);
     }
 }
+.btn-primary {
+    line-height: 1.1875;
+    color: #fff;
+    background: linear-gradient(
+        -90deg,
+        #009ce6,
+        #09a2e9,
+        #16acf1,
+        #34b8f5,
+        #62c6f5
+    );
+    border: 1px solid #009ce6 !important;
+    padding: 10px 35px;
+    border-radius: 3px;
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    border: 1px solid #009ce6;
+}
+.card-header {
+    border-bottom: 1px solid #009ce6;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+.card-body {
+    padding: 3rem 1rem;
+}

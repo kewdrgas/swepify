@@ -1,0 +1,16 @@
+.profile_section_label {
+    display: block;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #212529;
+    background-color: #f8fafc;
+    background-clip: padding-box;
+    border: 1px solid #009ce6;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
