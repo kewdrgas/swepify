@@ -56,5 +56,4 @@ Route::get('/oferty/dodaj', [OffersController::class,'index'])->name('offer.add'
   
     Route::get('/lokalizacje', 'LocationController@index')->name('locations');
 
-});
 
