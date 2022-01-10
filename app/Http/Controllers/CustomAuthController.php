@@ -14,9 +14,9 @@ class CustomAuthController extends Controller
 {
     public function __construct()
         {
-            $this->middleware('guest')->except('logout');
-            $this->middleware('guest:business')->except('logout');
-            $this->middleware('guest:user')->except('logout');
+         //   $this->middleware('guest')->except('logout');
+          //  $this->middleware('guest:business')->except('logout');
+          //  $this->middleware('guest:user')->except('logout');
         }
 
     public function index()
