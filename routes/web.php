@@ -29,8 +29,8 @@ Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout')
 
 Route::get('/oferty', [OffersController::class,'index'])->name('offers');
 
-Route::get('/oferty/dodaj', [OffersController::class,'index'])->name('offer.add');
-
+Route::get('/oferty/dodaj', [OffersController::class,'create'])->name('offer.add');
+Route::resource('offers', OffersController::class);
   Route::get('/oferta', [OffersController::class,'show'])->name('offer.show');
 
 
