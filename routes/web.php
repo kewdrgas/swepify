@@ -28,7 +28,10 @@ Route::post('custom-registration', [CustomAuthController::class, 'customRegistra
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 
 Route::get('/oferty', [OffersController::class,'index'])->name('offers');
+
 Route::get('/oferty/dodaj', [OffersController::class,'index'])->name('offer.add');
+
+  Route::get('/oferta', [OffersController::class,'show'])->name('offer.show');
 
 
 
@@ -52,5 +55,6 @@ Route::get('/oferty/dodaj', [OffersController::class,'index'])->name('offer.add'
 
   
     Route::get('/lokalizacje', 'LocationController@index')->name('locations');
-  Route::get('/oferty/{offerUuid}', 'OfferController@show')->name('offer.show');
+
+});
 

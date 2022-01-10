@@ -8,7 +8,11 @@ class OffersController extends Controller
 {
       public function index()
     {
-        return view('offers');
+        return view('offers.index');
+    }  
+      public function show()
+    {
+        return view('offers.show');
     }  
       
 }
