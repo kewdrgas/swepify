@@ -24,8 +24,8 @@ Vue.component(
     require("./components/ExampleComponent.vue").default
 );
 Vue.component(
-    "header-button-component",
-    require("./components/HeaderButtonComponent.vue").default
+    "header-component",
+    require("./components/HeaderComponent.vue").default
 );
 /**
  * Next, we will create a fresh Vue application instance and attach it to
