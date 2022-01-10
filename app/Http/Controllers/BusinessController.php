@@ -15,4 +15,12 @@ class BusinessController extends Controller
         }
         return redirect()->route('business.login');
     }
+    public function profile()
+    {
+        if(Auth::guard('business')->user())
+        {
+        return view('dashboard.business.profile');
+        }
+        return redirect()->route('business.login');
+    }
 }

@@ -32,8 +32,9 @@ Route::get('/oferty', [OffersController::class,'index'])->name('offers');
 Route::get('/oferty/dodaj', [OffersController::class,'create'])->name('offer.add');
 Route::resource('offers', OffersController::class);
   Route::get('/oferta', [OffersController::class,'show'])->name('offer.show');
-
-
+Route::get('/moje-zamowienia', function () {
+    return view('orders.index');
+});
 
 
     Route::get('/login/business',[CustomAuthController::class, 'showBusinessLoginForm'] )->name('business.login');
@@ -47,7 +48,8 @@ Route::resource('offers', OffersController::class);
     Route::post('/register/user',[CustomAuthController::class, 'createUser']);
 
     Route::get('/user',[UsersController::class, 'dashboard']);
-        Route::get('/business', [BusinessController::class, 'dashboard']);
+    Route::get('/business', [BusinessController::class, 'dashboard']);
+    Route::get('/business/profil', [BusinessController::class, 'profile']);
     Route::group(['middleware' => ['auth']], function () {
 
 
