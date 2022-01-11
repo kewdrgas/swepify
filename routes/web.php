@@ -31,29 +31,20 @@ Route::get('/oferty', [OffersController::class,'index'])->name('offers');
 
 Route::get('/oferty/dodaj', [OffersController::class,'create'])->name('offer.add');
 Route::resource('offers', OffersController::class);
-  Route::get('/oferta', [OffersController::class,'show'])->name('offer.show');
-Route::get('/moje-zamowienia', function () {
-    return view('orders.index');
-});
-
-
+Route::get('/moje-zamowienia', [UsersController::class, 'orders'])->name('user.orders');
     Route::get('/login/business',[CustomAuthController::class, 'showBusinessLoginForm'] )->name('business.login');
     Route::get('/login/user', [CustomAuthController::class, 'showUserLoginForm'] )->name('user.login');
     Route::get('/register/business',[CustomAuthController::class, 'showBusinessRegisterForm']);
     Route::get('/register/user', [CustomAuthController::class, 'showUserRegisterForm']);
-
     Route::post('/login/business',[CustomAuthController::class, 'businessLogin'] );
     Route::post('/login/user', [CustomAuthController::class, 'userLogin'] );
     Route::post('/register/business', [CustomAuthController::class, 'createBusiness']);
     Route::post('/register/user',[CustomAuthController::class, 'createUser']);
 
-    Route::get('/user',[UsersController::class, 'dashboard']);
+    Route::get('/user',[UsersController::class, 'dashboard'])->name('user.dashboard');
     Route::get('/business', [BusinessController::class, 'dashboard']);
     Route::get('/business/profil', [BusinessController::class, 'profile']);
-    Route::group(['middleware' => ['auth']], function () {
-
-
-    });
+    Route::group(['middleware' => ['auth']], function () {});
 
   
     Route::get('/lokalizacje', 'LocationController@index')->name('locations');

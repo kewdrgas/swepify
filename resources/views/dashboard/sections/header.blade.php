@@ -27,7 +27,7 @@
                     <a href="{{route('login')}}" class="button button__whiteorange"
                         >Profil</a
                     >
-                    <a href="{{route('login')}}" class="button button__orange"
+                    <a href="{{route('login')}}" class="button mg button__orange"
                         >Wyloguj się</a
                     >
                 </div>

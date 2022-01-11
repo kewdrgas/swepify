@@ -11,8 +11,12 @@ class UsersController extends Controller
     {
         if(Auth::guard('user')->user())
         {
-        return view('user');
+        return view('dashboard');
         }
         return redirect()->route('user.login');
+    }
+    public function orders(){
+        
+        return view('orders.index');
     }
 }
