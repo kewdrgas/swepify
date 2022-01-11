@@ -4,8 +4,10 @@
 <div class="container">
 <div class="profile_wrapper">
     <div class="profile_section_photo">
-        <img src="">
+        <img class="profile_section_photo_img" src="{{ URL::asset('images/user.png'); }}">
+      
     </div>
+      <p class="profile_section_name">Monika</p>
     <div class="profile_section_content">
         <div class="profile_section_content_labels row">
             <div class="col col-6">

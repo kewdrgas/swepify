@@ -24,7 +24,7 @@
                     <a href="{{route('offers')}}" class="nav-link">Przeglądaj oferty</a>
                     <a href="{{route('locations')}}" class="nav-link">Lokalizacje</a>
                     <a href="{{route('offer.add')}}" class="nav-link">Dodaj ofertę</a>
-                    <a href="{{route('offers')}}" class="button button__whiteorange">Profil</a>
+                    <a href="{{route('business.profile')}}" class="button button__whiteorange">Profil</a>
                     <a href="{{route('locations')}}" class="button button__orange mg">Wyloguj się</a>
 
                 </div>

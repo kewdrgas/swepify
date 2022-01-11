@@ -17,10 +17,10 @@ class BusinessController extends Controller
     }
     public function profile()
     {
-        if(Auth::guard('business')->user())
-        {
+        // if(Auth::guard('business')->user())
+        // {
         return view('dashboard.business.profile');
-        }
-        return redirect()->route('business.login');
+       // }
+        // return redirect()->route('business.login');
     }
 }

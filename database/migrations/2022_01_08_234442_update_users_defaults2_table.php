@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateUsersDefasaults2Table extends Migration
+class UpdateUsersDefaults2Table extends Migration
 {
     /**
      * Run the migrations.
