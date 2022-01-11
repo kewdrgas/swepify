@@ -55,7 +55,7 @@ class CustomAuthController extends Controller
 
         if (Auth::guard('user')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
-            return redirect()->intended('/user');
+            return redirect(route('user.dashboard'));
         }
         return back()->withInput($request->only('email', 'remember'));
     }
