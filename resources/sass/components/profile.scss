@@ -14,3 +14,36 @@
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+.profile_wrapper {
+    width: 1000px;
+    margin-top: 80px;
+    padding: 50px;
+    background-color: white;
+}
+
+
+.col-6 {
+    margin-top: 15px;
+}
+.col-4 {
+    margin-top: 15px;
+}
+
+.profile_section_photo_img {
+    width: 120px;
+}
+.profile_section_photo {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.profile_section_content {
+    margin-top: 40px;
+}
+.profile_section_name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #009ce6;
+    text-align: center;
+    margin-top: 10px;
+}
