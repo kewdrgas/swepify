@@ -3,6 +3,16 @@
     font-weight: bold;
     text-align: center;
     margin-bottom: 60px;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(
+        #009ce6,
+        #09a2e9,
+        #16acf1,
+        #34b8f5,
+        #62c6f5
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .offer_wrapper {
@@ -26,15 +36,22 @@
     font-weight: bold;
     font-size: 32px;
     margin: 0px;
-    color: #009ce6;
+    background: -webkit-linear-gradient(
+        #0074aa,
+        #09a2e9,
+        #16acf1,
+        #34b8f5,
+        #6fccf7
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 6px;
 }
 .offer_elements {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-content: center;
     margin-top: 9px;
-    margin-left: -97px;
     font-weight: bold;
 }
 .offer_public_date_content {
@@ -43,6 +60,9 @@
 }
 .offer_section {
     margin: 0px;
+    &:first-child {
+        width: 75%;
+    }
 }
 .offer {
     &_location_content {
@@ -60,6 +80,12 @@
     }
 
     &_element_content {
+        width: 20%;
+        &:first-child {
+            margin-left: 25px;
+            width: 60%;
+        }
+
         position: relative;
         &::before {
             width: 19px;
@@ -70,6 +96,8 @@
             left: -25px;
             display: block;
             top: 1px;
+        }
+        @include rwd("tablet") {
         }
     }
 }
@@ -127,6 +155,7 @@
 }
 .offer__content {
     margin-left: 20px;
+    width: 100%;
 }
 
 .inside_offer_wrapper {

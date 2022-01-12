@@ -1,0 +1,35 @@
+.create_form {
+    .form-group {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .create_offer_container {
+        width: 800px;
+    }
+    .row {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-control {
+        margin-top: 5px;
+        height: 60px;
+    }
+
+    .working_days {
+        &__title {
+            padding-right: 15px;
+        }
+        &__label {
+            padding-right: 10px;
+            font-size: 17px;
+        }
+    }
+}

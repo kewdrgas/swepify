@@ -3,15 +3,13 @@
 @section('content')
 
 <div class="dashboard offers">
-<div class="container">
-    <div class="row">
-            <div class="pull-left col-6">
-                <h2>Dodaj nową ofertę</h2>
-            </div>
-            <div class="pull-right col-6">
+<div class="container create_form">
+    <div class="pull-right col-6">
                 <a class="btn btn-primary" href="{{ route('offers') }}"> Wróć</a>
             </div>
-    </div>
+
+                <h2>Dodaj nową ofertę</h2>
+
     
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -28,6 +26,7 @@
         @csrf
     
         <div class="row">
+            <div class="create_offer_container">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Tytuł:</strong>
@@ -40,22 +39,22 @@
                     <textarea class="form-control" style="height:150px" name="description" placeholder="Podaj opis oferty"></textarea>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-12 col-sm-12 col-md-12"> 
                 <div class="form-group">
                     <strong>Lokalizacja:</strong>
-                    <input   type="text"class="form-control" style="height:150px" name="location" placeholder="Podaj lokalizację wykonywania usługi">
+                    <input   type="text"class="form-control" style="height:60px" name="location" placeholder="Podaj lokalizację wykonywania usługi">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Godziny pracy:</strong>
-                    <input type="number" class="form-control" style="height:150px" name="hours_start" placeholder="O której godzinie rozpoczynasz pracę?">
-                    <input type="number"  class="form-control" style="height:150px" name="hours_stop" placeholder="O której godzinie zamierzasz kończyć pracę?">
+                    <input type="number" class="form-control" style="height:60px" name="hours_start" placeholder="O której godzinie rozpoczynasz pracę?">
+                    <input type="number"  class="form-control" style="height:60px" name="hours_stop" placeholder="O której godzinie zamierzasz kończyć pracę?">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>dni pracy:</strong>
+                    <strong class="working_days__title">Dni pracy:</strong>
                     <input type="checkbox" class="working_days__checkbox" name="working_days[]" value="poniedziałek">
                     <label class="working_days__label" >Poniedziałek</label>
                     <input type="checkbox" class="working_days__checkbox" name="working_days[]" value="wtorek">
@@ -81,14 +80,15 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Widełki wynagrodzenia:</strong>
-                    <input type="number" class="form-control" style="height:150px" name="price_min" placeholder="Dolna granica widełek">
-                    <input type="number"  class="form-control" style="height:150px" name="price_max" placeholder="Górna granica widełek">
+                    <input type="number" class="form-control" style="height:60px" name="price_min" placeholder="Dolna granica widełek">
+                    <input type="number"  class="form-control" style="height:60px" name="price_max" placeholder="Górna granica widełek">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                     <button type="submit" class="btn btn-primary">Dodaj ofertę</button>
             </div>
         </div>
+    </div>
     
     </form>
 </div>

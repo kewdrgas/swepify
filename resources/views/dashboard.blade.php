@@ -24,6 +24,7 @@
     <body id="app" class="antialiased">
         @include('dashboard.sections.header')
         @yield('content')
+        @include('components.sections.footer')
     </body>
     <script src="{{ mix('/js/app.js') }}"></script>
 </html>

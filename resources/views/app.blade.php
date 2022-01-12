@@ -25,6 +25,7 @@
         <div id="app">
             @include('components.sections.header')
             @yield('content')
+            @include('components.sections.footer')
         </div>
     </body>
     <script src="{{ mix('/js/app.js') }}"></script>
