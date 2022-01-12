@@ -20,6 +20,9 @@ use App\Http\Controllers\UsersController;
 Route::get('/', function () {
     return view('home');
 })->name('home');
+Route::get('/lokalizacje', function () {
+    return view('locations');
+})->name('locations');
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']); 
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom'); 
@@ -43,10 +46,7 @@ Route::get('/moje-zamowienia', [UsersController::class, 'orders'])->name('user.o
 
     Route::get('/user',[UsersController::class, 'dashboard'])->name('user.dashboard');
     Route::get('/business', [BusinessController::class, 'dashboard']);
-    Route::get('/business/profil', [BusinessController::class, 'profile']);
+    Route::get('/business/profil', [BusinessController::class, 'profile'])->name('business.profile');
     Route::group(['middleware' => ['auth']], function () {});
-
-  
-    Route::get('/lokalizacje', 'LocationController@index')->name('locations');
 
 

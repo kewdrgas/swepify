@@ -6,6 +6,7 @@
             <div class="offer_location">
                 <p class="offer_location_content location">{{$offer->location}}</p>
             </div>
+            <div class="offer_elements_container">
             <div class="offer_elements">
                 <span class="offer_element_content calendar">
                     @foreach($offer->working_days as $day)
@@ -15,6 +16,7 @@
                 <span class="offer_element_content clock">{{$offer->hours_start}}:00-{{$offer->hours_stop}}:00</span>
                 <span class="offer_element_content money">{{$offer->price_min}}-{{$offer->price_max}} PLN</span>
             </div>
+        </div>
             <div class="offer_public_date_border"></div>
             <div class="offer_public_date_div">
                 <p class="offer_public_date_content">Opublikowano dnia: {{$offer->created_at}}</p>
