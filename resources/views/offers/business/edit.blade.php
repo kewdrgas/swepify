@@ -8,7 +8,7 @@
                 <a class="btn btn-primary" href="{{ route('offers.index') }}"> Wróć</a>
             </div>
 
-                <h2>Dodaj nową ofertę</h2>
+                <h2>Edytuj ofertę</h2>
 
     
     @if ($errors->any())
@@ -22,40 +22,40 @@
         </div>
     @endif
     
-    <form action="{{ route('offers.store') }}" method="POST">
+     <form action="{{ route('offer.update',$offer->id) }}" method="POST">
         @csrf
-    
+        <input hidden name="id" value="{{$offer->id}}">
         <div class="row">
             <div class="create_offer_container">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Tytuł:</strong>
-                    <input type="text" name="title" class="form-control" placeholder="Podaj tytuł">
+                    <input type="text" name="title" class="form-control" value="{{$offer->title}}" placeholder="Podaj tytuł">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Opis:</strong>
-                    <textarea class="form-control" style="height:150px" name="description" placeholder="Podaj opis oferty"></textarea>
+                    <textarea class="form-control" style="height:150px" value="{{$offer->description}}" name="description" placeholder="Podaj opis oferty"></textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12"> 
                 <div class="form-group">
                     <strong>Lokalizacja:</strong>
-                    <input   type="text"class="form-control" style="height:60px" name="location" placeholder="Podaj lokalizację wykonywania usługi">
+                    <input   type="text"class="form-control" style="height:60px" value="{{$offer->location}}" name="location" placeholder="Podaj lokalizację wykonywania usługi">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Godziny pracy:</strong>
-                    <input type="number" class="form-control" style="height:60px" name="hours_start" placeholder="O której godzinie rozpoczynasz pracę?">
-                    <input type="number"  class="form-control" style="height:60px" name="hours_stop" placeholder="O której godzinie zamierzasz kończyć pracę?">
+                    <input type="number" class="form-control" style="height:60px" value="{{$offer->hours_start}}" name="hours_start" placeholder="O której godzinie rozpoczynasz pracę?">
+                    <input type="number"  class="form-control" style="height:60px" value="{{$offer->hours_stop}}" name="hours_stop" placeholder="O której godzinie zamierzasz kończyć pracę?">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong class="working_days__title">Dni pracy:</strong>
-                    <input type="checkbox" class="working_days__checkbox" name="working_days[]" value="poniedziałek">
+                    <input type="checkbox" class="working_days__checkbox"  name="working_days[]" value="poniedziałek">
                     <label class="working_days__label" >Poniedziałek</label>
                     <input type="checkbox" class="working_days__checkbox" name="working_days[]" value="wtorek">
                     <label class="working_days__label" >wtorek</label>
@@ -74,18 +74,18 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Zakres usług:</strong>
-                    <input   type="text"class="form-control" style="height:150px" name="zakres_uslug" placeholder="Po przecinku podaj zakres usług">
+                    <input   type="text"class="form-control" style="height:150px" value="{{$offer->zakres_uslug}}" name="zakres_uslug" placeholder="Po przecinku podaj zakres usług">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Widełki wynagrodzenia:</strong>
-                    <input type="number" class="form-control" style="height:60px" name="price_min" placeholder="Dolna granica widełek">
-                    <input type="number"  class="form-control" style="height:60px" name="price_max" placeholder="Górna granica widełek">
+                    <input type="number" class="form-control" style="height:60px" value="{{$offer->price_min}}" name="price_min" placeholder="Dolna granica widełek">
+                    <input type="number"  class="form-control" style="height:60px" value="{{$offer->price_max}}" name="price_max" placeholder="Górna granica widełek">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary">Dodaj ofertę</button>
+                    <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
             </div>
         </div>
     </div>

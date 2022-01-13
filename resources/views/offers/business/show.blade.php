@@ -49,7 +49,7 @@
     <p class="inside_offer_description_content"> {{$offer->description}}</p>
 </div>
 <div class="inside_offer_section">
-        <a href="{{route('offers.show',$offer)}}" class="button button__orange hero_button">Zamawiam</a>
+        <a href="{{route('offers.edit',$offer)}}" class="button button__orange hero_button">Edytuj</a>
 
     </div>
 

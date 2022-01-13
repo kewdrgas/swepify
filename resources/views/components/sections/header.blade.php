@@ -21,7 +21,7 @@
                 </ul>
 
                 <div class="menu--buttons d-flex">
-                    <a href="{{route('offers')}}" class="nav-link">Przeglądaj oferty</a>
+                    <a href="{{route('offers.index')}}" class="nav-link">Przeglądaj oferty</a>
                     <a href="{{route('locations')}}" class="nav-link">Lokalizacje</a>
                     <header-button-component classButton="button__whiteorange" imguser="{{ URL::asset('images/3530467.jpg'); }}" imgbusiness="{{ URL::asset('images/52068.jpg'); }}" text="Zaloguj się" url="{{route('login')}}"></header-button-component>
                     <header-button-component classButton="button__orange mg" imguser="{{ URL::asset('images/3530467.jpg'); }}" imgbusiness="{{ URL::asset('images/52068.jpg'); }}" text="Zarejestruj się" url="{{route('signup')}}"></header-button-component>

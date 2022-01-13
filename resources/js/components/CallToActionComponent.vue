@@ -22,6 +22,7 @@
                             class="form-control"
                             id="exampleFormControlInput1"
                             placeholder="Adres zamawiającego"
+                            name="adres"
                         />
                     </div>
 
@@ -36,6 +37,7 @@
                             min="5"
                             id="exampleFormControlInput1"
                             placeholder="Metraz mieszkania zamawiającego"
+                            name="metraz"
                         />
                     </div>
                 </div>
@@ -46,6 +48,7 @@
                         class="form-control"
                         id="exampleFormControlInput1"
                         placeholder="Zakres usług sprzątających"
+                        name="zakres"
                     />
                 </div>
                 <div class="form-group">
@@ -57,6 +60,7 @@
                         class="form-control"
                         id="exampleFormControlInput1"
                         placeholder="Preferowana godzina zamawiającego"
+                        name="data"
                     />
                 </div>
                 <button class="button_order">Zamawiam</button>

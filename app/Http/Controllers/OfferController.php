@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Offer;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-
-class OffersController extends Controller
+class OfferController extends Controller
 {
-      public function index()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
         $data = Offer::latest()->paginate(5);
         if(Auth::guard('business')->user()){
@@ -23,20 +27,13 @@ class OffersController extends Controller
         return view('offers.index',compact('data'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
-    
-      public function show(Offer $offer)
-   {
-            $offer->zakres = explode(',',$offer->zakres_uslug);
-            if(Auth::guard('business')->user()){
 
-              return view('offers.business.show',compact('offer'));
-            }
-            if(Auth::guard('user')->user()){
-              return view('offers.user.show',compact('offer'));
-            } 
-        return view('offers.show',compact('offer'));
-    } 
-        public function create()
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
         if(Auth::guard('business')->user())
         {
@@ -44,8 +41,15 @@ class OffersController extends Controller
         }
       return  redirect(route('business.login'));
     } 
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
-    {
+ {
 
          $request->validate([
             'title' => 'required',
@@ -67,28 +71,46 @@ class OffersController extends Controller
         return redirect()->route('offers.index')
                         ->with('success','Post created successfully.');
     }
-        public function edit(Offer $offer)
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Offer  $offer
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Offer $offer)
+  {
+            $offer->zakres = explode(',',$offer->zakres_uslug);
+            if(Auth::guard('business')->user()){
+
+              return view('offers.business.show',compact('offer'));
+            }
+            if(Auth::guard('user')->user()){
+              return view('offers.user.show',compact('offer'));
+            } 
+        return view('offers.show',compact('offer'));
+    } 
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Offer  $offer
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Offer $offer)
     {
         return view('offers.business.edit',compact('offer'));
     }
-        public function myOffers(){
-                {
-                    
-        $data = Offer::where('business_id',Auth::guard('business')->id())->get();
-        if(Auth::guard('business')->user()){
-            return view('offers.business.index',compact('data'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
-        }
-        if(Auth::guard('user')->user()){
-            return view('offers.user.index',compact('data'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
-        }
-        return view('offers.index',compact('data'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
-    }
-        }
-        public function update(Request $request, Offer $offer)
-    {
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Offer  $offer
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Offer $offer)
+ {
 
          $request->validate([
             'title' => 'required',
@@ -102,18 +124,26 @@ class OffersController extends Controller
             'price_max' => 'required',
         ]);
     
-        $offer->update($request->all());
+        $offer = collect($request->all())->except(['_token']);
+        $offer = $offer->toArray();
+        $offer['business_id'] = Auth::guard('business')->id();
+        Offer::whereId($request ->id)->update($offer);
     
         return redirect()->route('offers.index')
                         ->with('success','Offer updated successfully');
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Offer  $offer
+     * @return \Illuminate\Http\Response
+     */
     public function destroy(Offer $offer)
     {
-        $post->delete();
+        $offer->delete();
     
-        return redirect()->route('posts.index')
-                        ->with('success','Post deleted successfully');
+        return redirect()->route('offer.index')
+                        ->with('success','Offer deleted successfully');
     }
-      
 }

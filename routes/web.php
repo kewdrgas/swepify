@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\OffersController;
+use App\Http\Controllers\OfferController;
 use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\UsersController;
 
@@ -30,11 +31,13 @@ Route::get('register', [CustomAuthController::class, 'registration'])->name('sig
 Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom'); 
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 
-Route::get('/oferty', [OffersController::class,'index'])->name('offers');
+Route::resource('offers', OfferController::class);
+Route::post('offers/{id}', [OfferController::class,'update'])->name('offer.update');
 
-Route::get('/oferty/dodaj', [OffersController::class,'create'])->name('offer.add');
-Route::resource('offers', OffersController::class);
-Route::get('/moje-zamowienia', [UsersController::class, 'orders'])->name('user.orders');
+
+
+Route::get('/moje-zamowienia', [OffersContoller::class, 'myOffers'])->name('user.orders');
+Route::get('/moje-oferty', [OffersController::class, 'myOffers'])->name('business.offers');
     Route::get('/login/business',[CustomAuthController::class, 'showBusinessLoginForm'] )->name('business.login');
     Route::get('/login/user', [CustomAuthController::class, 'showUserLoginForm'] )->name('user.login');
     Route::get('/register/business',[CustomAuthController::class, 'showBusinessRegisterForm']);
@@ -47,6 +50,7 @@ Route::get('/moje-zamowienia', [UsersController::class, 'orders'])->name('user.o
     Route::get('/user',[UsersController::class, 'dashboard'])->name('user.dashboard');
     Route::get('/business', [BusinessController::class, 'dashboard']);
     Route::get('/business/profil', [BusinessController::class, 'profile'])->name('business.profile');
+    Route::get('/uzytkownik/profil', [BusinessController::class, 'profile'])->name('user.profile');
     Route::group(['middleware' => ['auth']], function () {});
 
 
