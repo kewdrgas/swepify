@@ -1,6 +1,6 @@
 <div class="offer_wrapper">
         <div class="offer_section d-flex">  
-        <img class="offer_section_photo" src="{{ URL::asset('images/beautifulwoman-81.png'); }}">
+        <img class="offer_section_photo" src="{{ URL::asset('images/52068.jpg'); }}">
         <div class="offer__content">        
             <h2 class="offer_title">{{$offer->title}}</h2>
             <div class="offer_location">
