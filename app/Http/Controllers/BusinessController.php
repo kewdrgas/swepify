@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Offer;
+use App\Models\Business;
+use App\Models\User;
 
 class BusinessController extends Controller
 {
@@ -20,9 +22,19 @@ class BusinessController extends Controller
     }
     public function profile()
     {
+
         // if(Auth::guard('business')->user())
         // {
-        return view('dashboard.business.profile');
+            if(Auth::guard('business')->user()){
+                $id = Auth::guard('business')->id();
+                $data = Business::where('id',Auth::guard('business')->id())->first();
+                
+                return view('dashboard.business.profile',compact('data'));
+            }
+            else{
+                $data = User::where('id',Auth::guard('user')->id())->first();
+                return view('dashboard.profile',compact('data'));
+            }
        // }
         // return redirect()->route('business.login');
     }

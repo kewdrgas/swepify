@@ -1,5 +1,5 @@
 
-@extends('app')
+@extends('dashboard.business.dashboard')
 
 @section('content')
 <div class="location_container container">

@@ -174,4 +174,18 @@ class CustomAuthController extends Controller
   
         return Redirect('login');
     }
+    public function locations()
+    {
+
+        if(Auth::guard('business')->user()){
+            return view('dashboard.business.locations')
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+        }
+        if(Auth::guard('user')->user()){
+            return view('offers.user.locations')
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+        }
+        return view('locations')
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 }

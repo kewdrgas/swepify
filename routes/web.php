@@ -22,9 +22,7 @@ use App\Http\Controllers\SendsController;
 Route::get('/', function () {
     return view('home');
 })->name('home');
-Route::get('/lokalizacje', function () {
-    return view('locations');
-})->name('locations');
+Route::get('/lokalizacje', [CustomAuthController::class, 'locations'])->name('locations');
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']); 
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom'); 
@@ -53,6 +51,5 @@ Route::get('/moje-oferty', [OffersController::class, 'myOffers'])->name('busines
     Route::get('/business', [BusinessController::class, 'dashboard']);
     Route::get('/business/profil', [BusinessController::class, 'profile'])->name('business.profile');
     Route::get('/uzytkownik/profil', [BusinessController::class, 'profile'])->name('user.profile');
-    Route::group(['middleware' => ['auth']], function () {});
 
 

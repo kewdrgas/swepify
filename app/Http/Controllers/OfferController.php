@@ -100,6 +100,7 @@ class OfferController extends Controller
      */
     public function edit(Offer $offer)
     {
+         //   dd($offer);
         return view('offers.business.edit',compact('offer'));
     }
 

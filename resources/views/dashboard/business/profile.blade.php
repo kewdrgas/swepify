@@ -1,48 +1,50 @@
 @extends('dashboard.business.dashboard')
 
 @section('content')
-<div class="container">
+<div class="container dashboard">
 <div class="profile_wrapper">
     <div class="profile_section_photo">
         <img class="profile_section_photo_img" src="{{ URL::asset('images/user.png'); }}">
       
     </div>
-      <p class="profile_section_name">Monika</p>
+      <p class="profile_section_name">{{$data->first_name}}</p>
     <div class="profile_section_content">
         <div class="profile_section_content_labels row">
             <div class="col col-6">
             <p class="inside_offer_element_before_content">Imię</p>
-            <p class="profile_section_label">Monika</p>
+            <p class="profile_section_label">{{$data->first_name}}</p>
             </div>
             <div class="col col-6">
                 <p class="inside_offer_element_before_content">Nazwisko</p>
-                <p class="profile_section_label">Piątkowska</p>
+                <p class="profile_section_label">{{$data->last_name}}</p>
             </div>
         </div>
         <div class="profile_section_content_labels row">
             <div class="col col-6">
             <p class="inside_offer_element_before_content">E-mail</p>
-            <p class="profile_section_label">monikapiatkowska.mp@gmail.com</p>
+            <p class="profile_section_label">{{$data->email}}</p>
             </div>
             <div class="col col-6">
             <p class="inside_offer_element_before_content">Numer telefonu</p>
-            <p class="profile_section_label">123456789</p>
+            <p class="profile_section_label">{{$data->phone_number}}</p>
             </div>
         </div>
         <div class="profile_section_content_labels row">
             <div class="col col-4">
             <p class="inside_offer_element_before_content">Ulica</p>
-            <p class="profile_section_label">Mikke</p>
+            <p class="profile_section_label">{{$data->street}}</p>
             </div>
             <div class="col col-4">
             <p class="inside_offer_element_before_content">Kod pocztowy</p>
-            <p class="profile_section_label">60-461</p>
+            <p class="profile_section_label">{{$data->postal_code}}</p>
             </div>
             <div class="col col-4">
             <p class="inside_offer_element_before_content">Miasto</p>
-            <p class="profile_section_label">Poznań</p>
+            <p class="profile_section_label">{{$data->city}}</p>
             </div>
         </div>
     </div>
 </div>
+</div>
+
 @endsection

@@ -36,7 +36,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Opis:</strong>
-                    <textarea class="form-control" style="height:150px" value="{{$offer->description}}" name="description" placeholder="Podaj opis oferty"></textarea>
+                    <textarea class="form-control" style="height:150px"  name="description" placeholder="Podaj opis oferty">{{$offer->description}}</textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12"> 
