@@ -19,7 +19,8 @@ class CreateOffersTable extends Migration
             $table->text('description');
             $table->text('location');
             $table->json('working_days');
-            $table->json('working_hours');
+            $table->integer('hours_start');
+            $table->integer('hours_stop');
             $table->text('zakres_uslug');
             $table->integer('price_min');
             $table->integer('price_max');

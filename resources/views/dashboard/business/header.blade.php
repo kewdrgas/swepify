@@ -26,7 +26,7 @@
                     <a href="{{route('offers.create')}}" class="nav-link">Dodaj ofertę</a>
                                         <a href="{{route('business.offers')}}" class="nav-link">Moje oferty</a>
                     <a href="{{route('business.profile')}}" class="button button__whiteorange">Profil</a>
-                    <a href="{{route('locations')}}" class="button button__orange mg">Wyloguj się</a>
+                    <a href="{{route('signout')}}" class="button button__orange mg">Wyloguj się</a>
 
                 </div>
             </div>

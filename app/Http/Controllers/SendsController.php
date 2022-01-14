@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SendOffer;
+use App\Models\Send;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class SendOffersController extends Controller
+class SendsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,21 +34,22 @@ class SendOffersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+        public function store(Request $request)
     {
-               dd('kupa');
-        $request->validate([
+      //  dd($request);
+   /*     $request->validate([
             'adres' => 'required',
             'metraz' => 'required',
             'zakres_uslug' => 'required',
             'data' => 'required',
             'offer_id' => 'required',
         ]);
+        */
         $offer = $request->all();
-        $offer['user_id'] = Auth::guard('business')->id();
+        $offer['user_id'] = Auth::guard('user')->id();
 
-
-        SendOffer::create($offer);
+       // dd($offer);
+        Send::create($offer);
      
         return redirect()->route('orders.index')
                         ->with('success','Post created successfully.');
@@ -57,10 +58,10 @@ class SendOffersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Sendoffer  $sendoffer
+     * @param  \App\Models\Send  $send
      * @return \Illuminate\Http\Response
      */
-    public function show(SendOffer $sendoffer)
+    public function show(Send $send)
     {
         //
     }
@@ -68,10 +69,10 @@ class SendOffersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Sendoffer  $sendoffer
+     * @param  \App\Models\Send  $send
      * @return \Illuminate\Http\Response
      */
-    public function edit(SendOffer $sendoffer)
+    public function edit(Send $send)
     {
         //
     }
@@ -80,10 +81,10 @@ class SendOffersController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Sendoffer  $sendoffer
+     * @param  \App\Models\Send  $send
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SendOffer $sendoffer)
+    public function update(Request $request, Send $send)
     {
         //
     }
@@ -91,10 +92,10 @@ class SendOffersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Sendoffer  $sendoffer
+     * @param  \App\Models\Send  $send
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SendOffer $sendoffer)
+    public function destroy(Send $send)
     {
         //
     }

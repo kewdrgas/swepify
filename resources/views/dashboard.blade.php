@@ -7,7 +7,11 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-
+        <script>
+            var Laravel = {
+            'csrfToken' : '{{csrf_token()}}'
+        };
+        </script>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
         <!-- Styles -->
