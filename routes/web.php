@@ -19,9 +19,7 @@ use App\Http\Controllers\SendsController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [CustomAuthController::class, 'home'])->name('home');
 Route::get('/lokalizacje', [CustomAuthController::class, 'locations'])->name('locations');
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']); 
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');

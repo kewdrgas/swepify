@@ -6,7 +6,7 @@
     <div class="inside_offer_wrapper container">
         <div class="inside_offer_public_date">Dodane dnia: {{$offer->created_at}}</div>
          <div class="inside_offer_info_box">
-            <p class="inside_offer_info_box_content"> Możliwość dojazdu do: 15km</p>
+            <p class="inside_offer_info_box_content"> Możliwość dojazdu do: {{$offer->dojazd}}km</p>
             <p class="inside_offer_info_box_content"> Płatność: gotówką lub kartą</p>
         </div>
         <h3 class="inside_offer_title">{{$offer->title}}</h3>

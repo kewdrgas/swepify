@@ -58,10 +58,10 @@ class OfferController extends Controller
             'location' => 'required',
             'working_days' => 'required',
             'zakres_uslug' => 'required',
+            'dojazd' => 'required',
             'hours_start' => 'required',
             'hours_stop' => 'required',
-            'price_min' => 'required',
-            'price_max' => 'required',
+            'price' => 'required',
         ]);
         $offer = $request->all();
         $offer['business_id'] = Auth::guard('business')->id();

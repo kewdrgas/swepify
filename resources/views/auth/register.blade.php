@@ -9,7 +9,7 @@
                 <div class="card-header">{{ __('Rejestracja') }}</div>
 
                 <div class="card-body">
-                    @isset($url)
+                    @isset($url) 
                     <form method="POST" action='{{ url("register/$url") }}'>
                     @else
                     <form method="POST" action="{{ route('register') }}">
@@ -29,8 +29,7 @@
                                 @enderror
                             </div>
                         </div>
-                        @isset($url)
-                        @if($url == 'business')
+
                         <div class="row mb-3">
                             <label for="last_name" class="col-md-4 col-form-label text-md-end">{{ __('Nazwisko') }}</label>
 
@@ -57,6 +56,8 @@
                                 @enderror
                             </div>
                         </div>
+                        @isset($url)
+                        @if($url == 'business')
                         <div class="row mb-3">
                             <label for="city" class="col-md-4 col-form-label text-md-end">{{ __('Miasto') }}</label>
 

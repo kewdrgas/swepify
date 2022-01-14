@@ -3,6 +3,15 @@
 @section('content')
 <div class="container dashboard">
 <div class="profile_wrapper">
+        <div class="row">
+            <div class="pull-right col-6">
+                <a class="btn btn-primary" href="{{ route('offers.index') }}"> Wróć</a>
+            </div>
+            <div style="text-align:right" class="pull-right col-6">
+                <a  class="btn btn-primary" href="{{ route('offers.index') }}">Edytuj</a>
+            </div>
+        </div>
+    
     <div class="profile_section_photo">
         <img class="profile_section_photo_img" src="{{ URL::asset('images/user.png'); }}">
       

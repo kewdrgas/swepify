@@ -14,7 +14,7 @@
                 @endforeach
             </span>
                 <span class="offer_element_content clock">{{$offer->hours_start}}:00-{{$offer->hours_stop}}:00</span>
-                <span class="offer_element_content money">{{$offer->price_min}}-{{$offer->price_max}} PLN</span>
+                <span class="offer_element_content money">{{$offer->price}} PLN</span>
             </div>
         </div>
             <div class="offer_public_date_border"></div>

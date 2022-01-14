@@ -79,9 +79,14 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Widełki wynagrodzenia:</strong>
-                    <input type="number" class="form-control" style="height:60px" name="price_min" placeholder="Dolna granica widełek">
-                    <input type="number"  class="form-control" style="height:60px" name="price_max" placeholder="Górna granica widełek">
+                    <strong>Jak daleko mozesz dojechac do klienta (km):</strong>
+                    <input   type="number" class="form-control"  name="dojazd" placeholder="Podaj liczbę kilometrów">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Oczekiwana stawka godzinowa:</strong>
+                    <input type="number" class="form-control" style="height:60px" name="price" placeholder="Stawka za jedną godzinę pracy">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

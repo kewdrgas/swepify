@@ -72,8 +72,15 @@ class CustomAuthController extends Controller
     protected function createBusiness(Request $request)
     {
         $request->validate([
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required',
+            'city' => 'required',
+            'phone_number' => 'required|numeric',
+            'postal_code' => 'required|max:6',
+            'street' => 'required',
+            'city' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
         ]);
         $business = Business::create([
             'first_name' => $request['name'],
@@ -90,12 +97,14 @@ class CustomAuthController extends Controller
     protected function createUser(Request $request)
     {
                 $request->validate([
-            'email' => 'required',
-            'password' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:6',
         ]);
         $user = User::create([
             'name' => $request['name'],
             'email' => $request['email'],
+            'last_name' => $request['last_name'],
+            'phone_number' => $request["phone_number"],
             'password' => Hash::make($request['password']),
         ]);
         return redirect()->intended('login/user');
@@ -187,5 +196,17 @@ class CustomAuthController extends Controller
         }
         return view('locations')
             ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+    public function home()
+    {
+
+        if(Auth::guard('business')->user()){
+             return redirect(route('business.offers'));
+        }
+        if(Auth::guard('user')->user()){
+              return redirect(route('orders.index'));
+        }
+        return view('home');
+            
     }
 }

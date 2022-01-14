@@ -65,7 +65,12 @@
                         name="data"
                     />
                 </div>
-                <button class="button_order">Zamawiam</button>
+                <button
+                    style="margin-top: 15px"
+                    class="button button__whiteorange"
+                >
+                    Zamawiam
+                </button>
             </form>
         </div>
     </div>

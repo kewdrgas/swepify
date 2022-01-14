@@ -19,8 +19,7 @@ class Offer extends Model
         'zakres_uslug',
         'hours_start',
         'hours_stop',
-        'price_min',
-        'price_max',
+        'price',
         'rating',
         'active',
         'business_id'
