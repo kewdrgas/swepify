@@ -50,7 +50,7 @@
 </div>
 <div class="inside_offer_section">
         <a href="{{route('offers.show',$offer)}}" class="button button__orange hero_button">Zamawiam</a>
-        <call-to-action classButton="button__orange" imguser="{{ URL::asset('images/3530467.jpg'); }}" imgbusiness="{{ URL::asset('images/52068.jpg'); }}" text="Zaloguj się" url="{{route('login')}}"></call-to-action>
+        <call-to-action classButton="button__orange" imguser="{{ URL::asset('images/3530467.jpg'); }}" offer_id="{{$offer->id}}"  imgbusiness="{{ URL::asset('images/52068.jpg'); }}" text="Zaloguj się" url="{{ route('send_offers.store') }}"></call-to-action>
 
     </div>
 

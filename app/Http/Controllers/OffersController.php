@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Offer;
+use App\Models\Send;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -74,13 +75,15 @@ class OffersController extends Controller
         public function myOffers(){
                 {
                     
-        $data = Offer::where('business_id',Auth::guard('business')->id())->get();
+
         if(Auth::guard('business')->user()){
+                    $data = Offer::where('business_id',Auth::guard('business')->id())->get();
             return view('offers.business.index',compact('data'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
         }
         if(Auth::guard('user')->user()){
-            return view('offers.user.index',compact('data'))
+        $data = Send::where('user_id',Auth::guard('user')->id())->get();
+            return view('orders.index',compact('data'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
         }
         return view('offers.index',compact('data'))

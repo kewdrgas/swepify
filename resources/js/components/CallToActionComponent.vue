@@ -13,7 +13,9 @@
         <div v-if="showPopup" class="popup">
             <h2 class="popup__heading">Podaj dane do zamówienia usługi</h2>
 
-            <form>
+            <form :action="url" method="POST">
+                <input type="hidden" name="_token" :value="csrf" />
+                <input name="offer_id" :value="offer_id" hidden />
                 <div class="form-group row">
                     <div class="col-6">
                         <label for="exampleFormControlInput1">Adres</label>
@@ -48,7 +50,7 @@
                         class="form-control"
                         id="exampleFormControlInput1"
                         placeholder="Zakres usług sprzątających"
-                        name="zakres"
+                        name="zakres_uslug"
                     />
                 </div>
                 <div class="form-group">
@@ -90,9 +92,19 @@ export default {
         imgbusiness: {
             type: String,
         },
+        offer_id: {
+            type: String,
+        },
+        csrf_token: {
+            type: String,
+        },
     },
     data: () => ({
         showPopup: false,
+        csrf: "",
     }),
+    mounted() {
+        this.csrf = window.Laravel.csrfToken;
+    },
 };
 </script>

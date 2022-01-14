@@ -6,6 +6,7 @@ use App\Http\Controllers\OffersController;
 use App\Http\Controllers\OfferController;
 use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\SendsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +37,7 @@ Route::post('offers/{id}', [OfferController::class,'update'])->name('offer.updat
 
 
 
-Route::get('/moje-zamowienia', [OffersContoller::class, 'myOffers'])->name('user.orders');
+Route::get('/moje-zamowienia', [OffersController::class, 'myOffers'])->name('orders.index');
 Route::get('/moje-oferty', [OffersController::class, 'myOffers'])->name('business.offers');
     Route::get('/login/business',[CustomAuthController::class, 'showBusinessLoginForm'] )->name('business.login');
     Route::get('/login/user', [CustomAuthController::class, 'showUserLoginForm'] )->name('user.login');
@@ -46,6 +47,7 @@ Route::get('/moje-oferty', [OffersController::class, 'myOffers'])->name('busines
     Route::post('/login/user', [CustomAuthController::class, 'userLogin'] );
     Route::post('/register/business', [CustomAuthController::class, 'createBusiness']);
     Route::post('/register/user',[CustomAuthController::class, 'createUser']);
+    Route::post('zamowienie',[SendsController::class,'store'])->name('send_offers.store');
 
     Route::get('/user',[UsersController::class, 'dashboard'])->name('user.dashboard');
     Route::get('/business', [BusinessController::class, 'dashboard']);
