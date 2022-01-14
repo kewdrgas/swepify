@@ -23,8 +23,8 @@ p {
     margin: 0 0 0 9px;
 }
 .dashboard {
-    background-color: #f4f5f9;
     padding-top: 80px;
+    min-height: 80vh;
 }
 a {
     text-decoration: none;
@@ -215,7 +215,7 @@ a {
 }
 footer {
     background-color: white;
-    position: fixed;
+    margin-top: 100px;
     left: 0;
     bottom: 0;
     width: 100%;
