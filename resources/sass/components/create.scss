@@ -7,6 +7,16 @@
         font-size: 40px;
         font-weight: bold;
         text-align: center;
+        text-transform: uppercase;
+        background: -webkit-linear-gradient(
+            #009ce6,
+            #09a2e9,
+            #16acf1,
+            #34b8f5,
+            #62c6f5
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         margin-bottom: 50px;
     }
 

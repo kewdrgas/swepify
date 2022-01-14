@@ -15,13 +15,9 @@
                     <p class="inside_offer_element_content">{{$offer->adres}}</p>
                 </div>
         
-                <div class="order_wrapper_element ">
-                    <p class="inside_offer_element_before_content">Zakres usług</p>
-                    <p class="inside_offer_element_content">{{$offer->zakres_uslug}}</p>
-                </div>
-                                <div class="order_wrapper_element ">
+                 <div class="order_wrapper_element ">
                     <p class="inside_offer_element_before_content">Metraż</p>
-                    <p class="inside_offer_element_content">{{$offer->metraz}}</p>
+                    <p class="inside_offer_element_content">{{$offer->metraz}} m^2</p>
                 </div>    
 
                        

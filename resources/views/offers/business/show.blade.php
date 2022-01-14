@@ -52,6 +52,7 @@
         <a href="{{route('offers.edit',$offer)}}" class="button button__orange hero_button">Edytuj</a>
 
     </div>
+    </div>
 
 @endsection
 
