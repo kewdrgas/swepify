@@ -15,7 +15,7 @@ class OfferController extends Controller
      */
     public function index()
     {
-        $data = Offer::latest()->paginate(5);
+        $data = Offer::latest()->paginate();
         $count =$data->count();
         if(Auth::guard('business')->user()){
             return view('offers.business.index',compact('data'))
@@ -122,8 +122,7 @@ class OfferController extends Controller
             'zakres_uslug' => 'required',
             'hours_start' => 'required',
             'hours_stop' => 'required',
-            'price_min' => 'required',
-            'price_max' => 'required',
+            'price' => 'required',
         ]);
     
         $offer = collect($request->all())->except(['_token']);

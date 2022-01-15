@@ -43,6 +43,10 @@ Route::get('/moje-oferty', [OffersController::class, 'myOffers'])->name('busines
     Route::post('/login/user', [CustomAuthController::class, 'userLogin'] );
     Route::post('/register/business', [CustomAuthController::class, 'createBusiness']);
     Route::post('/register/user',[CustomAuthController::class, 'createUser']);
+    Route::get('/edit/business',[BusinessController::class, 'editProfile'])->name('edit.business');
+    Route::get('/edit/user',[UsersController::class, 'editProfile'])->name('edit.user');
+    Route::post('/update/business',[BusinessController::class, 'update'])->name('update.business');
+    Route::post('/update/user',[UsersController::class, 'update'])->name('update.user');
     Route::post('zamowienie',[SendsController::class,'store'])->name('send_offers.store');
 
     Route::get('/user',[UsersController::class, 'dashboard'])->name('user.dashboard');

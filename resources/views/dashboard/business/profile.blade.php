@@ -8,7 +8,7 @@
                 <a class="btn btn-primary" href="{{ route('offers.index') }}"> Wróć</a>
             </div>
             <div style="text-align:right" class="pull-right col-6">
-                <a  class="btn btn-primary" href="{{ route('offers.index') }}">Edytuj</a>
+                <a  class="btn btn-primary" href="{{ route('edit.business') }}">Edytuj</a>
             </div>
         </div>
     

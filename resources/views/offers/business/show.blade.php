@@ -17,8 +17,8 @@
                     <p class="inside_offer_element_content">{{$offer->location}}</p>
                 </div>
                <div class="inside_offer_wrapper_element money_inside_offer">
-                    <p class="inside_offer_element_before_content">Widełki cenowe</p>
-                    <p class="inside_offer_element_content">{{$offer->price_min}}-{{$offer->price_max}} PLN</p>
+                   <p class="inside_offer_element_before_content">Stawka godzinowa</p>
+                    <p class="inside_offer_element_content">{{$offer->price}} PLN</p>
                 </div>
             </div>
             <div class="inside_offer_element">

@@ -38,4 +38,40 @@ class BusinessController extends Controller
        // }
         // return redirect()->route('business.login');
     }
+    public function editProfile(){
+
+                      $id = Auth::guard('business')->id();
+                $business = Business::where('id',Auth::guard('business')->id())->first();
+        return view('dashboard.business.editprofile',compact('business'));
+    }
+
+
+        
+    public function update(Request $request){
+        $business = Business::where('id',Auth::guard('business')->id())->first();
+        $request->validate([
+            'email' => 'required|email',
+            'city' => 'required',
+            'phone_number' => 'required|numeric',
+            'postal_code' => 'required|max:6',
+            'street' => 'required',
+            'city' => 'required',
+            'name' => 'required',
+            'last_name' => 'required',
+        ]);
+
+        $business->update([
+            'first_name' => $request['name'],
+            'last_name' => $request['last_name'],
+            'city' => $request['city'],
+            'phone_number' => $request['phone_number'],
+            'street' => $request['street'],
+            'postal_code' => $request['postal_code'],
+            'email' => $request['email'],
+        ]);
+        $business->save();
+    
+        return redirect()->route('business.profile')
+                        ->with('success','Profile updated successfully');
+    }
 }

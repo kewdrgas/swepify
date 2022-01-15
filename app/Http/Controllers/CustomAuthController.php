@@ -79,7 +79,7 @@ class CustomAuthController extends Controller
             'postal_code' => 'required|max:6',
             'street' => 'required',
             'city' => 'required',
-            'first_name' => 'required',
+            'name' => 'required',
             'last_name' => 'required',
         ]);
         $business = Business::create([

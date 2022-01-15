@@ -78,7 +78,7 @@ class OffersController extends Controller
 
         if(Auth::guard('business')->user()){
                     $data = Offer::where('business_id',Auth::guard('business')->id())->get();
-            return view('offers.business.index',compact('data'))
+            return view('offers.business.myoffers',compact('data'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
         }
         if(Auth::guard('user')->user()){

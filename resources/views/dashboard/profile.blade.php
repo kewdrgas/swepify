@@ -8,7 +8,7 @@
                 <a class="btn btn-primary" href="{{ route('offers.index') }}"> Wróć</a>
             </div>
             <div style="text-align:right" class="pull-right col-6">
-                <a  class="btn btn-primary" href="{{ route('offers.index') }}">Edytuj</a>
+                <a  class="btn btn-primary" href="{{ route('edit.user') }}">Edytuj</a>
             </div>
         </div>
         <div class="profile_section_photo">
@@ -22,10 +22,11 @@
                 <p class="inside_offer_element_before_content">Imię</p>
                 <p class="profile_section_label">{{$data->name}}</p>
                 </div>
-                                <div class="col col-6">
+                <div class="col col-6">
                 <p class="inside_offer_element_before_content">Nazwisko</p>
                 <p class="profile_section_label">{{$data->last_name}}</p>
                 </div>
+            </div>
             <div class="profile_section_content_labels row">
                 <div class="col col-6">
                     <p class="inside_offer_element_before_content">Email</p>

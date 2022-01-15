@@ -17,8 +17,8 @@
                     <p class="inside_offer_element_content">{{$offer->location}}</p>
                 </div>
                <div class="inside_offer_wrapper_element money_inside_offer">
-                    <p class="inside_offer_element_before_content">Widełki cenowe</p>
-                    <p class="inside_offer_element_content">{{$offer->price_min}}-{{$offer->price_max}} PLN</p>
+                    <p class="inside_offer_element_before_content">Stawka godzinowa</p>
+                    <p class="inside_offer_element_content">{{$offer->price}} PLN</p>
                 </div>
             </div>
             <div class="inside_offer_element">
@@ -50,7 +50,7 @@
 </div>
 <div class="inside_offer_section">
     <div class="inside_offer_section_button">
-        <header-button-component classButton="button__whiteorange button_in_offer" imguser="{{ URL::asset('images/3530467.jpg'); }}" imgbusiness="{{ URL::asset('images/52068.jpg'); }}" text="Zaloguj się, aby zamówić usługę" url="{{route('login')}}"></header-button-component>
+        <header-button-component classButton="button__whiteorange button_in_offer" imguser="{{ URL::asset('images/3530467.jpg'); }}" imgbusiness="{{ URL::asset('images/52068.jpg'); }}" text="Zaloguj się i zamów" url="{{route('login')}}"></header-button-component>
     </div>
 
 </div>
