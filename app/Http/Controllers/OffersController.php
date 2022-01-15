@@ -12,7 +12,7 @@ class OffersController extends Controller
 {
       public function index()
     {
-        $data = Offer::latest()->paginate(5);
+        $data = Offer::latest()->paginate();
         if(Auth::guard('business')->user()){
             return view('offers.business.index',compact('data'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
