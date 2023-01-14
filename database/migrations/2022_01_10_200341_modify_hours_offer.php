@@ -13,11 +13,12 @@ class ModifyHoursOffer extends Migration
      */
     public function up()
     {
-        Schema::table('offers', function (Blueprint $table) {
+      /*  Schema::table('offers', function (Blueprint $table) {
             $table->dropColumn('working_hours');
             $table->integer('hours_stop')->after('zakres_uslug');
             $table->integer('hours_start')->after('zakres_uslug');
         });
+        */
     }
 
     /**
